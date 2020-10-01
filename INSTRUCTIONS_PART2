@@ -1,0 +1,15 @@
+PART 2
+
+Note:  To get the public IP address for your Flask server run the following command in the terminal:
+    
+        $> dig +short myip.opendns.com @resolver1.opendns.com
+
+1) Add the necessary code to the function category_list located in the file 
+app/category.py so that it display all the data in the category table.
+
+2) Add the necessary code to the function category_create_save located in
+the file app/category.py so that it insert a new record to the category table.
+
+3) Modify the query in the function product_lis in the file app/product.py so 
+that it the result also includes the category name for each product.
+

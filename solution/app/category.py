@@ -24,21 +24,16 @@ def teardown_db(exception):
         db.close()
 
 @webapp.route('/category',methods=['GET'])
-# Display an HTML list of all categories.
+# Display an HTML list of all category.
 def category_list():
-    # PART 2 complete this function by creating a cursor that returns all 
-    # column for all tuples in the category table.
+    cnx = get_db()
+
+    cursor = cnx.cursor()
+
+    query = '''SELECT * FROM category'''
+
+    cursor.execute(query)
     
-    cnx = get_db()          # get a database connection
-
-    cursor = cnx.cursor()   # create a database cursor
-
-    ## your code start here
-
-    
-    
-    ## your code ends here
-
     return render_template("category/list.html",title="Category List", cursor=cursor)
 
 
@@ -50,23 +45,18 @@ def category_create():
 @webapp.route('/category/create',methods=['POST'])
 # Create a new student and save them in the database.
 def category_create_save():
-    # PART 3 add new category to database.   This function will be invoqued when the user
-    # submits the form created by category_create() above
+    name = request.form.get('name',"")
+
+    cnx = get_db()
+    cursor = cnx.cursor()
 
 
-    name = request.form.get('name',"")      # get new name from parameter in form
+    query = ''' INSERT INTO category (name)
+                       VALUES (%s)'''
 
-    cnx = get_db()                          # get database connection
-    cursor = cnx.cursor()                   # create cursor
-
-    ## your code start here
-
+    cursor.execute(query,(name,))
+    cnx.commit()
     
-    
-    ## your code ends here
-
-    cnx.commit()                            # commit changes
-
     return redirect(url_for('category_list'))
 
 

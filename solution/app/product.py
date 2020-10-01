@@ -28,18 +28,13 @@ def teardown_db(exception):
 @webapp.route('/product',methods=['GET'])
 # Display an HTML list of all product.
 def product_list():
-    # Part 4 Modify the code below so that the query also includes the category name for each product
-    
     cnx = get_db()
 
     cursor = cnx.cursor()
 
-    
-    ## your code start here 
-    query = ''' SELECT p.id, p.name, p.price, p.quantity
-                FROM product p 
-            '''
-    ## your code ends here
+    query = ''' SELECT p.id, p.name, p.price, p.quantity, c.name
+                FROM product p join category c
+                ON p.category_id = c.id '''
 
     cursor.execute(query)
     

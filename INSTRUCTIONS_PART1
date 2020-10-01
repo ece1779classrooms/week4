@@ -1,9 +1,14 @@
+
+=================  Make sure attributes names are typed correctly =================
+=================  Check estore_diagram.png for attributes names =================
+
+
 PART 1
 
-You will use the derminal and the command line tool mysql to execute SQL 
+You will use the terminal and the command line tool mysql to execute SQL
 queries on the estore database.   Open the file estore_diagram.png to see an
 entity-relationship diagram of the database.   The file lecture_queries.sql
-contains the queries presented in class.  
+contains the queries presented in class.
 
 Instructions:
 
@@ -12,23 +17,23 @@ Instructions:
    - Run the following command to start mysql as user ece1779
       $ mysql -u ece1779 -p
       Enter password: secret
-      
-2.- Write a query that returns all information for the customer with id = 2. 
+
+2.- Write a query that returns all information for the customer with id = 2.
 You can use the following code as a starting point:
 
-   SELECT * 
+   SELECT *
    FROM estore.customer
 
-3.- Enter the name of the above customer on PCRS by completing the question on 
+3.- Enter the name of the above customer on PCRS by completing the question on
 the Week4:Perfom section at https://pcrs.teach.cs.toronto.edu/ECE1779-2020-09.
 
-4.- Write a query that returns only the name and the number of available items 
+4.- Write a query that returns only the name and the number of available items
 for of all products that cost between 15 and 20.  You can use the following code
 as a starting point:
 
-   SELECT * 
+   SELECT *
    FROM estore.product
-      
+
 
 5.- Write a query that returns the names of all products and the name of their
 category.  You can use the following code
@@ -36,8 +41,8 @@ as a starting point:
 
    SELECT p.name as "Product Name", c.name as "Category Name"
    FROM estore.product as p join estore.category c
-   
-   
+
+
 
 
 

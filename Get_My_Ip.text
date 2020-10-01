@@ -1,0 +1,4 @@
+========= command to get your current IP ================
+
+
+        $> dig +short myip.opendns.com @resolver1.opendns.com

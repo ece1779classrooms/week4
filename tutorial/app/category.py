@@ -6,7 +6,7 @@ import mysql.connector
 from app.config import db_config
 
 def connect_to_database():
-    return mysql.connector.connect(user=db_config['user'], 
+    return mysql.connector.connect(user=db_config['user'],
                                    password=db_config['password'],
                                    host=db_config['host'],
                                    database=db_config['database'])
@@ -26,17 +26,17 @@ def teardown_db(exception):
 @webapp.route('/category',methods=['GET'])
 # Display an HTML list of all categories.
 def category_list():
-    # PART 2 complete this function by creating a cursor that returns all 
+    # PART 2 Q1 complete this function by creating a cursor that returns all
     # column for all tuples in the category table.
-    
+
     cnx = get_db()          # get a database connection
 
     cursor = cnx.cursor()   # create a database cursor
 
     ## your code start here
 
-    
-    
+
+
     ## your code ends here
 
     return render_template("category/list.html",title="Category List", cursor=cursor)
@@ -50,7 +50,7 @@ def category_create():
 @webapp.route('/category/create',methods=['POST'])
 # Create a new student and save them in the database.
 def category_create_save():
-    # PART 3 add new category to database.   This function will be invoqued when the user
+    # PART 2 Q2 add new category to database.   This function will be invoqued when the user
     # submits the form created by category_create() above
 
 
@@ -61,8 +61,8 @@ def category_create_save():
 
     ## your code start here
 
-    
-    
+
+
     ## your code ends here
 
     cnx.commit()                            # commit changes
@@ -78,7 +78,7 @@ def category_delete(id):
     cursor = cnx.cursor()
 
     query = "DELETE FROM category WHERE id = %s"
-    
+
     cursor.execute(query,(id,))
     cnx.commit()
 

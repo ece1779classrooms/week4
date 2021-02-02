@@ -22,17 +22,17 @@ Instructions:
 You can use the following code as a starting point:
 
    SELECT *
-   FROM estore.customer
+   FROM estore.customer;
 
 3.- Enter the name of the above customer on PCRS by completing the question on
-the Week4:Perfom section at https://pcrs.teach.cs.toronto.edu/ECE1779-2020-09.
+the Week4:Perfom section at https://pcrs.teach.cs.toronto.edu/ECE1779-2021-01.
 
-4.- Write a query that returns only the name and the number of available items
+4.- Write a query that returns only the name and the quantity of available items
 for of all products that cost between 15 and 20.  You can use the following code
 as a starting point:
 
    SELECT *
-   FROM estore.product
+   FROM estore.product;
 
 
 5.- Write a query that returns the names of all products and the name of their
@@ -40,7 +40,7 @@ category.  You can use the following code
 as a starting point:
 
    SELECT p.name as "Product Name", c.name as "Category Name"
-   FROM estore.product as p join estore.category c
+   FROM estore.product as p join estore.category c;
 
 
 

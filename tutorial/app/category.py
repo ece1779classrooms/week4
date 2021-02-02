@@ -35,9 +35,12 @@ def category_list():
 
     ## your code start here
 
-
+    query = '''SELECT '''
 
     ## your code ends here
+
+    cursor.execute(query)
+
 
     return render_template("category/list.html",title="Category List", cursor=cursor)
 
@@ -61,9 +64,12 @@ def category_create_save():
 
     ## your code start here
 
-
+    query = '''INSERT INTO '''
 
     ## your code ends here
+
+    cursor.execute(query,(name,))    
+
 
     cnx.commit()                            # commit changes
 

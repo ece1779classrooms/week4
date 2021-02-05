@@ -33,7 +33,12 @@ def category_list():
 
     cursor = cnx.cursor()   # create a database cursor
 
-    ## your code start here
+    
+    
+    ## your code starts here
+    # See W3 schools for how to write a select statement: https://www.w3schools.com/sql/sql_select.asp
+    # The offical MySQl documentation for the Select statement feature can be found here: https://dev.mysql.com/doc/refman/8.0/en/select.html
+    # Tip: start with the W3 schools website first because it is simpler as it has enough information for you to compelte this task.
 
     query = '''SELECT '''
 
@@ -62,6 +67,9 @@ def category_create_save():
     cnx = get_db()                          # get database connection
     cursor = cnx.cursor()                   # create cursor
 
+    
+    # See W3 schools for how to write an Insert statement: https://www.w3schools.com/sql/sql_insert.asp
+    # The offical MySQl documentation for the Insert statement feature can be found here: https://dev.mysql.com/doc/refman/8.0/en/insert.html
     ## your code start here
 
     query = '''INSERT INTO '''
